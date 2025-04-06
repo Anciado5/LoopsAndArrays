@@ -1,83 +1,19 @@
+
+
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
 
-        System.out.println("zemiau ciklo");
 
-        for (int i = 0; i < 100; i++) {
-            if (i % 2 == 0) {
-                System.out.println(i);
-            }
-        }
-        System.out.println("zemiau ciklo");
-
-        for (int i = 0; i < 10; i++) {
-            if (i % 2 != 0) {
-                continue;
-            }
-            System.out.println(i);
-        }
-
-        for (int i = 0; i < 10; i++) {
-            if (i % 2 != 0) {
-                break;
-            }
-            System.out.println(i);
-        }
-
-//        extra
-//        int i = 0;
-//        for (; i < 5; ) {
-//            i++;
-//            System.out.println(i);
-//        }
-
-
-//        masyvai===========================================================
-
-        int num = 20;
-        int[] nums = {1, 5, 3, 7, 8, 20};
-        System.out.println(nums);
-        System.out.println(nums[0]);
-        System.out.println(nums[1]);
-        System.out.println(nums[2]);
-        System.out.println(nums[3]);
-        System.out.println(nums[0]);
-        System.out.println(nums[5]);
-//        System.out.println(nums[6]);
-
-        nums[0] = 50;
-        System.out.println(nums[0]);
-
-        System.out.println("=====================");
-
-        for (int y = 1; y <= 10; y++) {
-            for (int x = 1; x <= 10; x++) {
-                System.out.print(x * y + " ");
-            }
-            System.out.println();
-
-        }
-
-        System.out.println("=====================");
-
-        for (int y = 1; y <= 10; y++) {
-            String row = "";
-            for (int x = 1; x <= 10; x++) {
-                System.out.print(x * y + " ");
-            }
-            System.out.println(row);
-
-        }
         System.out.println("\n\n===========================LOOP AND ARRAYS===================================");
 
 //        1 uzduotis: Sukurkite ciklą kuris atspausdintų 10 kartų žodį “labas”.
 
         System.out.println("\n1 uzduotis =============================>>>>");
 
-        for (int i = 0; i <= 9; i++) {
-            System.out.println("labas");
+        for (int i = 1; i <= 10; i++) {
+            System.out.println("labas");//printina is naujos eilutes ==> vienoj eilutei printina PRINT
         }
         System.out.println("=========================================");
 
@@ -93,14 +29,16 @@ public class Main {
 //        3 uzduotis: Sukurkite masyvą iš dešimties augalų pavadinimų.
 
         String[] plants = {"Monstera", "Fikusas", "Agava", "Dracena", "Kaladis", "Amarilis", "Kaktusas", "Orchideja", "Palme", "Skindapas"};
-
+            // [] skliaustai reiskia masyva ==> rinkinys, jis visada rasomas figuriniuose skliaustuose {}, visi elementai viduj atskiriami per kableli
+            // gali nuti ir skaiciu masyvas int, double, boolean ir bet kokio kito tipo
 
 //        4 uzduotis: Atspausdinkite kiekvieną 3čio uždavinio augalą atskiroje eilutėje.
 
         System.out.println("\n4 uzduotis =============================>>>>");
 
-        for (int i = 0; i < plants.length; i++) {
-            System.out.println(plants[i]);
+        for (int i = 0; i < plants.length; i++) { //plants - tai masyvas, lenth -> pasako, kiek objektu yra masyve, siuo atveju kiek augalu pavadinimu
+            System.out.println(plants[i]); //printLN visad spausdina is naujos eilutes
+                                    // [] lauztiniuose skliaustuose rasoma kelinta masyvo elementa norime gauti, siuo atveju visus, todel "i"
         }
         System.out.println("=========================================");
 
@@ -109,18 +47,18 @@ public class Main {
 
         System.out.println("\n5 uzduotis =============================>>>>");
 
-        for (int i = plants.length - 1; i >= 0; i--) {
-            System.out.println(plants[i]);
-        }
+        for (int i = plants.length - 1; i >= 0; i--) {// plants.lenght-1 ==> nes reikia suzinoti paskutinio elemento indeksa, pirmo elemento masyve indeksas VISADA yra 0, todel paskutinio elemento indeksas yra VISADA lenght -1
+            System.out.println(plants[i]);             // i>=0 ==> kadangi indeksas mazeja, paskutinis elementas atbuliniame cikle yra 0,
+        }                                               // i-- ==> cia kaip ir i++, tik mazejantis
         System.out.println("=========================================");
 
 //        6 uzduotis: Atspausdinkite kas antrą skaičių nuo 10 iki 50 (porinius);
 
         System.out.println("\n6 uzduotis =============================>>>>");
 
-        for (int y = 10; y <= 50; y++) {
-            if (y % 2 == 0) {
-                System.out.println(y);
+        for (int y = 10; y <= 50; y++) { //ciklas sukasi nuo 10 iki 50
+            if (y % 2 == 0) { //salyga ==> jei skaicius dalinasi is 2 be liekanos
+                System.out.println(y); //spausdinam skaiciu
             }
         }
         System.out.println("=========================================");
@@ -133,12 +71,13 @@ public class Main {
 
         for (int y = 10; y <= 50; y++) {
             if (y % 10 == 0) {
-                continue;
+                continue; //continue reiskia, pabaigti darba su situo ciklo elementu, nevykdant tolimesnio kodo ir pereiti prie kito ciklo
             }
-            if (y % 2 == 0) {
+            if (y % 2 == 0) { //galima rasyti be pirmo ifo ir be continue ==> parasyti viska viennoje if salygoje ==> if (y % 2 == 0 && y % 10 != 0)
                 System.out.println(y);
             }
         }
+
         System.out.println("=========================================");
 
 //        8 uzduotis: Sukurkite ciklą kuris suktųsi nuo 0 iki 20.
@@ -164,14 +103,14 @@ public class Main {
 
         System.out.println("\n9 uzduotis =============================>>>>");
 
-        int less5 = 0;
+        int less5 = 0; //sioj salygoj reikia klininti klikerius
         int more7 = 0;
 
         String[] plants1 = {"Monstera", "Fikusas", "Agava", "Dracena", "Kaladis", "Amarilis", "Kaktusas", "Orchideja", "Palme", "Skindapas"};
 
         for (int i = 0; i < plants1.length; i++){
-            System.out.println(plants1[i].length());
-            if (plants1[i].length() < 5){
+            System.out.println(plants1[i].length());// plants1[i] yra tekstas => i-tasis masyvo elementas (siuo atveju augalu pavadinimas kazkuris tai is eiles), o length() ==> to pavadinimo raidziu kieki
+            if (plants1[i].length() < 5){ //plants1[i].length() reiskia augalo pavadinimo raidziu kieki
                 less5++;
             }
             if (plants1[i].length() > 7){
@@ -209,10 +148,23 @@ public class Main {
 
         System.out.println("\n1 uzduotis =============================>>>>");
 
-        int num1 = (int) Math.round( Math.random() * 300);
+        int more150 = 0;
 
+        for (int x = 0; x <= 300; x++){
+            int randomNum = (int) Math.round( Math.random() * 300);
+            if (randomNum > 150){
+                more150++;}
+            if (randomNum > 275){
+                System.out.print("[" + randomNum + "]" + " ");
+            }
+            else{
+                System.out.print(randomNum + " ");
+            }
+        }
+        System.out.println("\n\nSkaiciu, didesniu kaip 150 yra " + more150);
 
-        System.out.println("=========================================");
+        System.out.println("\n\n=========================================");
+
 
 //        2 uzduotis: Vienoje eilutėje atspausdinkite visus skaičius nuo 1 iki 3000,
 //        kurie dalijasi iš 77 be liekanos. Skaičius atskirkite kableliais.
@@ -220,9 +172,161 @@ public class Main {
 
         System.out.println("\n2 uzduotis =============================>>>>");
 
-        System.out.println("=========================================");
+
+        for (int i = 1; i <=3000 ; i++) { //sukasi ciklas nuo 1 iki 3000
+            if (i % 77 == 0){ //salyga --> 1) jeigu skaicius dalinasi is 77 be liekanos
+                if (i != 77){ //3)papildomai jeigu skaicius nera 77
+                    System.out.print(","); //pries skaiciu bus isspausdintas kablelis --> NES KABLELIO SOUT YRA ANKSCIAU NEGU SKAICIAUS SOUT
+                }
+                System.out.print(i); //2) spausdink skaiciu
+            }
+        }
+
+        System.out.println("\n\n=========================================");
 
 //        3 uzduotis: Nupieškite kvadratą iš “*”, kurio kraštines sudaro 25“*”.
+
+        System.out.println("\n3 uzduotis =============================>>>>");
+
+        int n = 25; //n --> krastines ilgis 25 zvaigzdutes
+        for (int x = 1; x <= n; x++) { //sukasi ciklas --> bega per 25 EILUTES
+            System.out.println(); //eilutes pradzioj 25 kartus spausdiname ENTER
+            for (int y = 1; y <= n; y++) { //sukasi ciklas (stulpelyje)
+                System.out.print("*"); //25 kartus isspausdina * toje pacioje eiluteje
+                }
+        }
+
+        System.out.println("\n\n=========================================");
+
+//        4 uzduotis: Prieš tai nupieštam kvadratui nupieškite istrižaines zaigzdutę pakeisdami kitu simboliu.
+
+        System.out.println("\n4 uzduotis =============================>>>>");
+
+        int n1 = 25; //krastine 25 zvaigzdutes
+        for (int x = 1; x <= n1; x++) {
+            System.out.println();
+            for (int y = 1; y <= n1; y++) {
+                if (x == y || x + y == n1 + 1){ //papildoma salyga --> ieskome istrizaines,1) koordinate X turi buti lygi koordinatei Y ||arba|| 2) istrizainiu koordinaciu suma + 1
+                    System.out.print("@");} // atitikus salygai spausdiname @
+                    else{
+                        System.out.print("*"); //neatitikus salygos, visur kitur spausdiname *
+                    }
+            }
+        }
+
+        System.out.println("\n\n=========================================");
+
+//        5 uzduotis: Metam monetą. Monetos kritimo rezultatą imituojam Math.random() funkcija, kur 0 yra herbas, o 1 - skaičius.
+//        Monetos metimo rezultatus išvedame į ekraną atskiroje eilutėje: “S” jeigu iškrito skaičius ir “H” jeigu herbas.
+//        Suprogramuokite tris skirtingus scenarijus kai monetos metimą stabdome:
+//        a) Iškritus herbui;
+//        b) Tris kartus iškritus herbui;
+//        c) Tris kartus iš eilės iškritus herbui;
+
+        System.out.println("\n5 uzduotis =============================>>>>");
+
+        System.out.println("\na) Iskritus herbui =============================>>>>");
+
+        boolean Herbas0 = false;
+
+        while (!Herbas0){ //jeigu dar nebuvo ismestas herbas
+            int coin = (int) Math.round( Math.random()); //metam moneta --> jinai ismeta 0 arba 1
+            if (coin == 0){ //jeigu ismeta 0
+                Herbas0 = true; //radom herba
+                System.out.println("H");
+            }
+            else{ //jeigu neradom herbo
+                System.out.println("S");
+            }
+        }
+
+        System.out.println("\nb) Tris kartus iškritus herbui =============================>>>>");
+
+        int Herbas00 = 0; //klikeris kiek krtu iskrenta herbas
+
+        while (Herbas00 != 3){ //ciklas sukasi tol, kol neismetem 3 herbu
+            int coin = (int) Math.round( Math.random()); //metam moneta --> jinai ismeta 0 arba 1
+            if (coin == 0){ //jeigu 0
+                System.out.println("H"); //spausdiname H
+                Herbas00++; //ir kliktelname
+            }
+            else{  //jeigu neradome herbo (iskrito skaicius)
+                System.out.println("S"); //spausdinam S
+            }
+        }
+
+        System.out.println("\nc) Tris kartus iš eilės iškritus herbui =============================>>>>");
+
+        int Herbas003 = 0; //klikeris kiek krtu IS EILES iskrenta herbas
+
+        while (Herbas003 != 3){ //ciklas sukasi tol, kol neismetem IS EILES 3 herbu
+            int coin = (int) Math.round( Math.random()); //metam moneta --> jinai ismeta 0 arba 1
+            if (coin == 0){ //jeigu 0
+                System.out.println("H"); //spausdiname H
+                Herbas003++; //ir kliktelname
+            }
+            else{  //jeigu neradome herbo (iskrito skaicius)
+                System.out.println("S"); //spausdinam S
+                Herbas003 = 0; //nusinulina klikeris
+            }
+        }
+        System.out.println("\n\n=========================================");
+
+//        6 uzduotis: Kazys ir Petras žaidžia šaškėm. Petras surenka taškų kiekį nuo 10 iki 20, Kazys surenka taškų kiekį nuo 5 iki 25.
+//        Vienoje eilutėje išvesti žaidėjų vardus su taškų kiekiu ir “Partiją laimėjo: ​laimėtojo vardas​”.
+//        Taškų kiekį generuokite funkcija ​Math.random()​. Žaidimą laimi tas, kas greičiau surenka 222 taškus.
+//        Partijas kartoti tol, kol kažkuris žaidėjas pirmas surenka 222 arba daugiau taškų.
+
+        System.out.println("\n6 uzduotis =============================>>>>");
+
+        int KazioPoints = 0;
+        int PetroPoints = 0;
+
+        while (KazioPoints < 222 && PetroPoints < 222) { // ciklas sukasi tol. kol nesurenka 222 tasku --> negali buti <= nes tada, net ir surinkus 222 taskus ciklas suktusi dar karta
+            int Kazys = (int) Math.round(Math.random() * 10) + 10; // zaidzia partijas ir renka taskus
+            int Petras = (int) Math.round(Math.random() * 20) + 5; // zaidzia partijas ir renka taskus
+            KazioPoints = KazioPoints + Kazys; // prie pries tai buvusios reiksmes pridek buvusia reiksme
+            PetroPoints += Petras; // += reiskia -->prie pries tai buvusios reiksmes pridek nauja reiksme
+            System.out.print("Kazys " + " " + KazioPoints + "(+" + Kazys + ") " + "Petras " + " " + PetroPoints + "(+" + Petras + ")" + " Partija laimejo: ");
+            if (Kazys > Petras){
+                System.out.println("Kazys");
+            }
+            else if(Petras > Kazys){
+                System.out.println("Petras");
+            }
+            else{
+                System.out.println("***LYGIOSIOS***");
+            }
+        }
+        System.out.print("Zaidima laimejo: ");
+        if (KazioPoints > PetroPoints){
+            System.out.println("Kazys");
+        }
+        else{
+            System.out.println("Petras");
+        }
+
+        System.out.println("\n\n=========================================");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
