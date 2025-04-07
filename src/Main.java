@@ -308,6 +308,67 @@ public class Main {
 
         System.out.println("\n\n=========================================");
 
+//        8 uzdavinys: Sumodeliuokite vinies kalimą. Įkalimo gylį sumodeliuokite pasinaudodami Math.random() funkcija.
+//        Vinies ilgis 8.5cm (pilnai sulenda į lentą).
+//        a) “Įkalkite” 5 vinis mažais smūgiais. Vienas smūgis vinį įkala 5-20 mm. Suskaičiuokite kiek reikia smūgių.
+//        b) “Įkalkite” 5 vinis dideliais smūgiais. Vienas smūgis vinį įkala 20-30 mm, bet yra 50% tikimybė
+//        (pasinaudokite Math.random() funkcija tikimybei sumodeliuoti), kad smūgis nepataikys į vinį. Suskaičiuokite kiek reikia smūgių.
+
+        System.out.println("\n8 uzduotis =============================>>>>");
+
+        System.out.println("\na) “Įkalkite” 5 vinis mažais smūgiais =============================>>>>");
+
+        int viniesSmug = 0; //klikinsim kiek reikia smugiu 5 vinims sukalti
+
+        for (int i = 1; i <= 5; i++) { //sukasi ciklas 5 kartus ==> kalam 5 vinis
+            int SukaltoViniesIlgis = 0; //skaiciuosim iki kol pasieks 85 mm
+            System.out.print("Vinis nr " + i + ": ");
+            while (SukaltoViniesIlgis < 85){ // sukasi ciklas tol, kol pasiekia 85 mm
+                int vinis = (int) Math.round(Math.random() * 15) + 5; // kala vini, ikala kazkiek mm
+                viniesSmug++; //pripliusuojam smugius
+                SukaltoViniesIlgis += vinis; //susumuojam ilgi
+
+                System.out.print(SukaltoViniesIlgis + " ");
+            }
+            System.out.println();
+        }
+        System.out.print("\n5 vinims sukalti reikejo " + viniesSmug + " smugiu");
+
+        System.out.println("\nb) “Įkalkite” 5 vinis dideliais smūgiais. =============================>>>>");
+
+        int viniesSmug2 = 0; //klikinsim kiek reikia smugiu 5 vinims sukalti
+
+        for (int i = 1; i <= 5; i++) { //sukasi ciklas 5 kartus ==> kalam 5 vinis
+            int SukaltoViniesIlgis2 = 0; //skaiciuosim iki kol pasieks 85 mm
+            System.out.print("Vinis nr " + i + ": ");
+            while (SukaltoViniesIlgis2 < 85){ // sukasi ciklas tol, kol pasiekia 85 mm
+                int pataiko = (int) Math.round( Math.random());//kala plaktuku, pataiko arba ne
+                int vinis2 = (int) Math.round(Math.random() * 20) + 10; // kala plaktuku, ikala kazkiek mm
+                if (pataiko == 0){
+                    viniesSmug2++;
+                    System.out.print("- ");
+                }
+                else{
+                    viniesSmug2++; //pripliusuojam smugius
+                    SukaltoViniesIlgis2 += vinis2; //susumuojam ilgi
+                    System.out.print(SukaltoViniesIlgis2 + " ");
+                }
+            }
+            System.out.println();
+        }
+        System.out.print("\n5 vinims sukalti reikejo " + viniesSmug2 + " smugiu");
+
+        System.out.println("\n\n=========================================");
+
+
+
+
+
+
+
+
+
+
 
 
 
