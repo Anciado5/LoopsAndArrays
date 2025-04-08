@@ -172,15 +172,25 @@ public class Main {
 
         System.out.println("\n2 uzduotis =============================>>>>");
 
-
+//        mano budas//
         for (int i = 1; i <=3000 ; i++) { //sukasi ciklas nuo 1 iki 3000
             if (i % 77 == 0){ //salyga --> 1) jeigu skaicius dalinasi is 77 be liekanos
                 if (i != 77){ //3)papildomai jeigu skaicius nera 77
-                    System.out.print(","); //pries skaiciu bus isspausdintas kablelis --> NES KABLELIO SOUT YRA ANKSCIAU NEGU SKAICIAUS SOUT
+                    System.out.print(", "); //pries skaiciu bus isspausdintas kablelis --> NES KABLELIO SOUT YRA ANKSCIAU NEGU SKAICIAUS SOUT
                 }
                 System.out.print(i); //2) spausdink skaiciu
             }
         }
+        System.out.println();
+
+//        kitas budas:
+        String row = "";
+        for (int i = 77; i < 3000; i++) {
+            if (i % 77 == 0) {
+                row += i + ", ";
+            }
+        }
+        System.out.println(row.substring(0,row.length() -2));
 
         System.out.println("\n\n=========================================");
 
